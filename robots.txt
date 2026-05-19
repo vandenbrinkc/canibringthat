@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://canibringthat.com/sitemap.xml

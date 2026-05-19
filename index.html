@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#059669">
+    <title>Can I Bring That? — Instant TSA Check for 258 Items</title>
+    <meta name="description" content="Instantly check if you can bring any item on a plane. Searchable database of 258 items based on official TSA rules. Carry-on and checked bag info, mobile-friendly.">
+    <meta name="keywords" content="can i bring on plane, tsa allowed items, what can i pack, carry on items, tsa rules, what cant bring plane, tsa what can i bring">
+    <meta name="author" content="Can I Bring That">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://canibringthat.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Can I Bring That? — Instant TSA Check for 258 Items">
+    <meta property="og:description" content="Instantly check if you can bring any item on a plane. Searchable database based on official TSA rules.">
+    <meta property="og:url" content="https://canibringthat.com/">
+    <meta property="og:site_name" content="Can I Bring That">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Can I Bring That? — Instant TSA Check for 258 Items">
+    <meta name="twitter:description" content="Instantly check if you can bring any item on a plane. 258 items, mobile-friendly.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Can I Bring That?",
+      "url": "https://canibringthat.com/",
+      "description": "Instant TSA check for 258 items. Free, mobile-friendly, based on official TSA.gov data.",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": { "@type": "Organization", "name": "Can I Bring That", "url": "https://canibringthat.com/" },
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --emerald-50:  #ecfdf5;
+            --emerald-100: #d1fae5;
+            --emerald-500: #10b981;
+            --emerald-600: #059669;
+            --emerald-700: #047857;
+            --emerald-800: #065f46;
+            --green-100: #dcfce7;
+            --green-600: #16a34a;
+            --green-700: #15803d;
+            --amber-100: #fef3c7;
+            --amber-700: #b45309;
+            --blue-100: #dbeafe;
+            --blue-700: #1d4ed8;
+            --red-100: #fee2e2;
+            --red-600: #dc2626;
+            --red-700: #b91c1c;
+            --gray-100: #f3f4f6;
+            --gray-600: #4b5563;
+            --text:        #0f172a;
+            --text-secondary: #334155;
+            --text-muted:  #64748b;
+            --border:      #e2e8f0;
+            --card:        #ffffff;
+            --shadow:      0 4px 12px rgba(5, 150, 105, 0.08);
+            --shadow-lg:   0 10px 25px rgba(5, 150, 105, 0.12);
+            --radius:      12px;
+            --gradient-header: linear-gradient(135deg, #047857 0%, #10b981 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(180deg, #ffffff 0%, var(--emerald-50) 50%, var(--emerald-100) 100%);
+            background-attachment: fixed;
+            color: var(--text);
+            line-height: 1.5;
+            font-size: 15px;
+            min-height: 100vh;
+            min-height: 100dvh;
+            -webkit-font-smoothing: antialiased;
+        }
+        .header {
+            background: var(--gradient-header);
+            color: white;
+            padding: 18px 20px;
+            text-align: center;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            max-width: 668px;
+            margin: 12px 16px 0;
+        }
+        @media (min-width: 700px) {
+            .header { margin-left: auto; margin-right: auto; padding: 28px 20px; }
+        }
+        .header h1 {
+            font-size: 1.4em;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .header p {
+            display: none;
+            font-size: 0.95em;
+            opacity: 0.95;
+            margin-top: 6px;
+            font-weight: 400;
+        }
+        @media (min-width: 600px) {
+            .header h1 { font-size: 1.9em; }
+            .header p { display: block; }
+        }
+        .main {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 12px 16px 24px;
+        }
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 18px;
+            box-shadow: var(--shadow);
+            margin-bottom: 12px;
+        }
+        @media (min-width: 600px) {
+            .card { padding: 24px; margin-bottom: 16px; }
+        }
+        .search-box {
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 16px 16px 16px 48px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1.05em;
+            font-weight: 500;
+            font-family: inherit;
+            background: white;
+            color: var(--text);
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--emerald-500);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+        }
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.3em;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        .stats-row {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        .popular-row {
+            margin-top: 14px;
+            font-size: 0.82em;
+            color: var(--text-muted);
+            text-align: center;
+            line-height: 1.8;
+        }
+        .popular-chip {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--emerald-50);
+            color: var(--emerald-700);
+            border-radius: 14px;
+            margin: 2px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+            text-decoration: none;
+            border: 1px solid var(--emerald-100);
+        }
+        .popular-chip:hover {
+            background: var(--emerald-100);
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        @media (min-width: 480px) {
+            .category-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (min-width: 700px) {
+            .category-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        .cat-btn {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 8px;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-family: inherit;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .cat-btn:hover {
+            border-color: var(--emerald-500);
+            background: var(--emerald-50);
+        }
+        .cat-btn.active {
+            border-color: var(--emerald-600);
+            background: var(--emerald-100);
+        }
+        .cat-emoji {
+            font-size: 1.4em;
+            line-height: 1;
+        }
+        .cat-name {
+            font-size: 0.78em;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.2;
+        }
+        .cat-count {
+            font-size: 0.7em;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .section-title {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .or-divider {
+            text-align: center;
+            margin: 14px 0;
+            position: relative;
+            font-size: 0.75em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        .or-divider::before,
+        .or-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: calc(50% - 60px);
+            height: 1px;
+            background: var(--border);
+        }
+        .or-divider::before { left: 0; }
+        .or-divider::after { right: 0; }
+        .or-divider span { background: var(--card); padding: 0 12px; }
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 0 4px;
+        }
+        .results-count {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .clear-btn {
+            font-size: 0.82em;
+            color: var(--emerald-700);
+            background: var(--emerald-50);
+            border: 1px solid var(--emerald-100);
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 8px;
+            transition: all 0.15s;
+        }
+        .clear-btn:hover {
+            background: var(--emerald-100);
+            border-color: var(--emerald-500);
+        }
+        .clear-btn:active {
+            transform: scale(0.98);
+        }
+        .item-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 16px;
+            margin-bottom: 8px;
+            box-shadow: var(--shadow);
+            transition: transform 0.15s;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .item-name {
+            font-size: 1.05em;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.3;
+            flex: 1;
+        }
+        .item-cat {
+            font-size: 0.7em;
+            font-weight: 700;
+            color: var(--text-muted);
+            background: var(--gray-100);
+            padding: 3px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .status-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .status-box {
+            border-radius: 8px;
+            padding: 8px 10px;
+            border: 1px solid;
+        }
+        .status-label {
+            font-size: 0.68em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+            opacity: 0.85;
+        }
+        .status-value {
+            font-size: 0.88em;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+        .status-yes {
+            background: var(--green-100);
+            border-color: var(--green-600);
+            color: var(--green-700);
+        }
+        .status-no {
+            background: var(--red-100);
+            border-color: var(--red-600);
+            color: var(--red-700);
+        }
+        .status-special {
+            background: var(--amber-100);
+            border-color: #f59e0b;
+            color: var(--amber-700);
+        }
+        .status-liquid {
+            background: var(--blue-100);
+            border-color: #3b82f6;
+            color: var(--blue-700);
+        }
+        .status-airline {
+            background: var(--gray-100);
+            border-color: var(--gray-600);
+            color: var(--gray-600);
+        }
+        .item-note {
+            font-size: 0.82em;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+            line-height: 1.5;
+        }
+        .item-aff {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .aff-text {
+            font-size: 0.82em;
+            color: var(--text-secondary);
+        }
+        .aff-link {
+            padding: 7px 14px;
+            background: linear-gradient(135deg, var(--emerald-600) 0%, var(--emerald-700) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.78em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: opacity 0.15s, transform 0.05s;
+            box-shadow: 0 2px 6px rgba(5, 150, 105, 0.25);
+            white-space: nowrap;
+        }
+        .aff-link:hover { opacity: 0.9; }
+        .aff-link:active { transform: scale(0.98); }
+        .item-source {
+            font-size: 0.72em;
+            color: var(--text-muted);
+            margin-top: 6px;
+            text-align: right;
+        }
+        .item-source a {
+            color: var(--text-muted);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--text-muted);
+        }
+        .item-source a:hover {
+            color: var(--emerald-600);
+            border-bottom-color: var(--emerald-600);
+        }
+        .empty-state {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 32px 16px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .empty-icon { font-size: 2.5em; margin-bottom: 8px; }
+        .empty-title {
+            font-weight: 700;
+            font-size: 1em;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+        .empty-text {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 16px 32px;
+            color: var(--text-muted);
+            font-size: 0.78em;
+        }
+        .footer p { margin: 0; }
+        .footer p + p { margin-top: 8px; }
+        .footer a {
+            color: var(--emerald-600);
+            text-decoration: none;
+        }
+        .footer a:hover { text-decoration: underline; }
+        .footer .disclosure {
+            font-size: 0.85em;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>✈️ Can I Bring That?</h1>
+        <p>Instant TSA check for any item — 258 items, mobile-friendly</p>
+    </header>
+
+    <main class="main">
+        <div class="card">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" class="search-input" placeholder="Search any item (e.g. scissors, vape, batteries)..." autocomplete="off" autofocus>
+            </div>
+            <div class="stats-row">📋 <span id="total-count">258</span> items based on official TSA.gov data</div>
+            <div class="popular-row" id="popular-row"></div>
+        </div>
+
+        <div class="card" id="category-card">
+            <div class="section-title">Or browse by category</div>
+            <div id="category-grid" class="category-grid"></div>
+        </div>
+
+        <div id="results-area"></div>
+    </main>
+
+    <footer class="footer">
+        <p>Can I Bring That? · Data sourced from <a href="https://www.tsa.gov/travel/security-screening/whatcanibring/all" target="_blank" rel="noopener">TSA.gov</a> (US Transportation Security Administration)</p>
+        <p>Always verify with your airline. Rules may change without notice.</p>
+        <p class="disclosure">As an Amazon Associate, we earn from qualifying purchases. Links to Amazon may generate commissions at no extra cost to you.</p>
+    </footer>
+
+    <script>
+        const DATA = {"items":[{"name":"Aerosol Insecticide","co":"No","ck":"Yes (Special Instructions)","note":"Aerosol insecticides are not allowed in carry-on; however they are allowed in checked bags as long as they are not labeled as hazardous material (HAZMAT).","cat":"Flammables","aff":"travel size insect repellent"},{"name":"Air Mattress with Built-in Pump","co":"Yes (Special Instructions)","ck":"Yes","note":"Air mattresses with built-in pump are allowed in carry-on bags. Please check with your airline for any size or weight restrictions.","cat":"Household","aff":null},{"name":"Airbrush Make-up Machine","co":"Yes (Special Instructions)","ck":"Yes (Special Instructions)","note":"Devices containing lithium metal or lithium ion batteries should be carried in carry-on baggage.","cat":"Electronics","aff":null},{"name":"Alcoholic beverages","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Alcoholic beverages with more than 24% but not more than 70% alcohol are limited in checked bags to 5 liters per passenger. Mini bottles in carry-on must fit in quart-sized bag.","cat":"Food & Drink","aff":"tsa approved travel bottles set"},{"name":"Alcoholic beverages over 140 proof","co":"No","ck":"No","note":"Alcoholic beverages with more than 70% alcohol (over 140 proof), including grain alcohol and 151 proof rum.","cat":"Food & Drink","aff":null},{"name":"Ammunition","co":"No","ck":"Yes (Special Instructions)","note":"Small arms ammunitions must be securely packed in fiber, wood or metal boxes. Check with your airline.","cat":"Firearms","aff":null},{"name":"Antlers","co":"Yes","ck":"Yes","note":"You may transport this item in carry-on or checked bags. Check with airline for size restrictions.","cat":"Sporting","aff":null},{"name":"Artificial Skeleton Bones","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Axes and Hatchets","co":"No","ck":"Yes","note":"","cat":"Tools","aff":null},{"name":"Baby Carrier","co":"Yes","ck":"Yes","note":"Check with airline to ensure item fits in overhead bin or under seat.","cat":"Baby","aff":"travel baby carrier compact"},{"name":"Blood Sugar Test Kit","co":"Yes","ck":"Yes","note":"Notify TSA officer that you have diabetes. Insulin pumps must be accompanied by insulin.","cat":"Medical","aff":"diabetic travel case organizer"},{"name":"Bobby Pins","co":"Yes","ck":"Yes","note":"","cat":"Personal","aff":null},{"name":"Bocce Balls","co":"Yes","ck":"Yes","note":"","cat":"Sporting","aff":null},{"name":"Body Armor","co":"Yes","ck":"Yes","note":"Generally allowed, but TSA officer makes final decision.","cat":"Miscellaneous","aff":null},{"name":"Books","co":"Yes","ck":"Yes","note":"Books often require additional screening. Officer may ask to remove from case.","cat":"Miscellaneous","aff":null},{"name":"Bottle Opener","co":"Yes","ck":"Yes","note":"","cat":"Tools","aff":null},{"name":"Bottled Water","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Must follow 3-1-1 liquids rule.","cat":"Food & Drink","aff":"collapsible travel water bottle tsa"},{"name":"Bowling Balls","co":"No","ck":"Yes","note":"Sports equipment that can be used as a bludgeon is prohibited in cabin.","cat":"Sporting","aff":null},{"name":"Bowling Pins","co":"No","ck":"Yes","note":"Sports equipment that can be used as a bludgeon is prohibited in cabin.","cat":"Sporting","aff":null},{"name":"Bows and Arrows","co":"No","ck":"Yes","note":"","cat":"Sporting","aff":"bow case archery travel"},{"name":"Box Cutters","co":"No","ck":"Yes","note":"Any sharp objects in checked bags should be sheathed or securely wrapped.","cat":"Sharp Objects","aff":null},{"name":"Boxing Gloves","co":"Yes","ck":"Yes","note":"","cat":"Sporting","aff":"boxing gloves bag travel"},{"name":"Brass Instruments","co":"Check with Airline","ck":"Yes","note":"","cat":"Musical","aff":null},{"name":"Brass Knuckles","co":"No","ck":"Yes","note":"Illegal in some states. TSA will report to law enforcement if found.","cat":"Weapons","aff":null},{"name":"Bread","co":"Yes","ck":"Yes","note":"Solid food items allowed. Liquid/gel food over 3.4 oz not allowed in carry-on.","cat":"Food & Drink","aff":null},{"name":"Bread Machine","co":"Yes","ck":"Yes","note":"Check with airline for size/weight restrictions.","cat":"Household","aff":null},{"name":"Breast Milk","co":"Yes (Special Instructions)","ck":"Yes (Special Instructions)","note":"Formula, breast milk, toddler drinks in quantities greater than 3.4 oz are allowed. Declare to TSA officer.","cat":"Baby","aff":"breast milk cooler travel"},{"name":"CO2 Cartridge","co":"No","ck":"No","note":"Except for personal medical oxygen cylinders, only EMPTY compressed gas cylinders allowed.","cat":"Hazardous","aff":null},{"name":"CO2 Cartridge for Life Vest","co":"Yes","ck":"Yes","note":"Life vest with up to two CO2 cartridges inside, plus two spare cartridges.","cat":"Safety","aff":null},{"name":"Camp stoves","co":"Yes (Special Instructions)","ck":"Yes (Special Instructions)","note":"Allowed only if empty of all fuel and cleaned so no vapors remain.","cat":"Flammables","aff":null},{"name":"Candy","co":"Yes","ck":"Yes","note":"Solid food items allowed.","cat":"Food & Drink","aff":null},{"name":"Canes","co":"Yes","ck":"Yes","note":"Visit special procedures page for traveling with cane.","cat":"Medical","aff":"folding cane travel"},{"name":"Canned Foods","co":"Yes (Special Instructions)","ck":"Yes","note":"May require additional screening due to appearance on X-ray.","cat":"Food & Drink","aff":null},{"name":"Canoe/Kayak Paddles","co":"No","ck":"Yes","note":"","cat":"Sporting","aff":null},{"name":"Cap Guns","co":"No","ck":"Yes","note":"","cat":"Firearms","aff":null},{"name":"Car Parts","co":"Yes (Special Instructions)","ck":"Yes (Special Instructions)","note":"Engine parts without fuel allowed. Must be in original box and free of gasoline/oil for checked bags.","cat":"Automotive","aff":null},{"name":"Cast Iron Cookware","co":"No","ck":"Yes","note":"","cat":"Household","aff":null},{"name":"Casts","co":"Yes","ck":"Yes","note":"","cat":"Medical","aff":null},{"name":"Cell Phones","co":"Yes","ck":"Yes","note":"","cat":"Electronics","aff":"phone travel case waterproof"},{"name":"Cereal","co":"Yes","ck":"Yes","note":"","cat":"Food & Drink","aff":null},{"name":"Chapsticks","co":"Yes","ck":"Yes","note":"","cat":"Toiletries","aff":"lip balm travel pack"},{"name":"Cheese (Creamy)","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Cheese (Solid)","co":"Yes","ck":"Yes","note":"Solid food items allowed.","cat":"Food & Drink","aff":null},{"name":"Chocolate (Solid)","co":"Yes","ck":"Yes","note":"Solid food items allowed.","cat":"Food & Drink","aff":null},{"name":"Chocolate (liquid)","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Chopsticks","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Christmas Lights","co":"Yes","ck":"Yes","note":"","cat":"Electronics","aff":null},{"name":"Cigar Cutters","co":"Yes (Special Instructions)","ck":"Yes","note":"Generally permitted but recommended in checked baggage. Officer discretion applies.","cat":"Tobacco","aff":null},{"name":"Cigarettes","co":"Yes","ck":"Yes","note":"","cat":"Tobacco","aff":"cigarette travel case waterproof"},{"name":"Cigars","co":"Yes","ck":"Yes","note":"","cat":"Tobacco","aff":"travel cigar case humidor"},{"name":"Clock","co":"Yes","ck":"Yes","note":"","cat":"Electronics","aff":null},{"name":"Drills and Drill Bits","co":"No","ck":"Yes","note":"","cat":"Tools","aff":null},{"name":"Drones","co":"Check with Airline","ck":"Check with Airline","note":"Drones allowed through checkpoint. Check airline policy. Lithium battery restrictions may apply.","cat":"Electronics","aff":"drone backpack carry on"},{"name":"Drum Sticks","co":"Yes","ck":"Yes","note":"","cat":"Musical","aff":null},{"name":"Dry Ice","co":"Check with Airline","ck":"Check with Airline","note":"FAA limits you to 5.5 pounds of properly packaged dry ice. Airline approval required.","cat":"Hazardous","aff":null},{"name":"Dry batteries (AA, AAA, C, D)","co":"Yes","ck":"Yes","note":"Must be protected from damage and creating sparks.","cat":"Electronics","aff":"battery organizer storage case travel"},{"name":"E-cigarettes / Vaping devices","co":"Yes (Special Instructions)","ck":"No","note":"Must be in carry-on. Measures to prevent unintentional activation required. No recharging on board.","cat":"Tobacco","aff":"vape travel case carrying"},{"name":"E-liquids","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Tobacco","aff":"vape juice travel bottles"},{"name":"Fresh Eggs","co":"Yes","ck":"Yes","note":"","cat":"Food & Drink","aff":null},{"name":"Fresh Fruits and Vegetables","co":"Yes (Special Instructions)","ck":"Yes","note":"Passengers flying from Hawaii, Puerto Rico, or US Virgin Islands cannot take most fresh produce to mainland.","cat":"Food & Drink","aff":null},{"name":"Fresh Meat and Seafood","co":"Yes (Special Instructions)","ck":"Yes","note":"If packed with ice, ice must be completely frozen. Partially melted ice subject to 3-1-1 rule.","cat":"Food & Drink","aff":null},{"name":"Frozen Food","co":"Yes (Special Instructions)","ck":"Yes","note":"Ice or ice packs must be completely frozen. Partially melted not permitted.","cat":"Food & Drink","aff":null},{"name":"Fuel Cells","co":"Yes (Special Instructions)","ck":"No","note":"Two spare fuel cell cartridges allowed in carry-on only. Must be marked 'Approved for carriage in aircraft cabin only'.","cat":"Electronics","aff":null},{"name":"Fuels","co":"No","ck":"No","note":"Any flammable liquid fuel is prohibited.","cat":"Flammables","aff":null},{"name":"Full Sized Video Game Consoles","co":"Yes","ck":"Yes","note":"Place console in separate bin for X-ray screening.","cat":"Electronics","aff":null},{"name":"Gas Torches","co":"No","ck":"No","note":"","cat":"Flammables","aff":null},{"name":"Gasoline","co":"No","ck":"No","note":"","cat":"Flammables","aff":null},{"name":"Geiger Counters","co":"Yes","ck":"Yes","note":"","cat":"Electronics","aff":null},{"name":"Gel Ice Packs","co":"Yes (Special Instructions)","ck":"Yes","note":"Medically necessary gel ice packs allowed regardless of state. Notify officer.","cat":"Medical","aff":null},{"name":"Gel-Type Candles","co":"No","ck":"Yes","note":"","cat":"Flammables","aff":null},{"name":"Glass","co":"Yes","ck":"Yes","note":"","cat":"Household","aff":null},{"name":"Glass Picture Frame","co":"Yes","ck":"Yes","note":"","cat":"Household","aff":null},{"name":"Hair Dryer","co":"Yes","ck":"Yes","note":"","cat":"Toiletries","aff":"travel hair dryer dual voltage"},{"name":"Hair Straightener / Curling Iron","co":"Yes","ck":"Yes","note":"Cordless: heating element must be safely covered.","cat":"Toiletries","aff":"travel hair straightener"},{"name":"Hand Sanitizer","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Toiletries","aff":"travel size hand sanitizer tsa"},{"name":"Hiking Poles","co":"No","ck":"Yes","note":"Blunt-tipped allowed in carry-on. Sharp-tipped not allowed.","cat":"Sporting","aff":"collapsible trekking poles travel"},{"name":"Hookahs","co":"Yes","ck":"Yes","note":"","cat":"Tobacco","aff":null},{"name":"Hot Plate","co":"Yes","ck":"Yes","note":"","cat":"Household","aff":null},{"name":"Hoverboards","co":"Check with Airline","ck":"Check with Airline","note":"Allowed through checkpoint. Check airline policy.","cat":"Electronics","aff":null},{"name":"Hummus","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Ice","co":"Yes (Special Instructions)","ck":"Yes","note":"Must be frozen solid. Partially melted subject to 3-1-1 rule.","cat":"Food & Drink","aff":null},{"name":"Ice Axes/Ice Picks","co":"No","ck":"Yes","note":"Any sharp objects in checked bags should be sheathed or securely wrapped.","cat":"Sporting","aff":null},{"name":"Ice cream","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Inhalers","co":"Yes (Special Instructions)","ck":"Yes","note":"Medically necessary. Declare to TSA officer for inspection.","cat":"Medical","aff":"inhaler travel case"},{"name":"Instant Hot/Cold Packs","co":"Yes","ck":"Yes","note":"","cat":"Medical","aff":null},{"name":"Insulin","co":"Yes (Special Instructions)","ck":"Yes","note":"Medically necessary. Declare to TSA officer.","cat":"Medical","aff":"insulin travel cooler case"},{"name":"Insulin Pumps","co":"Yes","ck":"Yes","note":"Notify TSA officer. Must be accompanied by insulin.","cat":"Medical","aff":"insulin pump travel pouch"},{"name":"Jam and Jelly","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Jewelry","co":"Yes","ck":"Yes","note":"Keep valuables with you. Ask for private screening if desired.","cat":"Personal","aff":null},{"name":"Juice (regular)","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Juice for Babies","co":"Yes (Special Instructions)","ck":"Yes","note":"Allowed in reasonable quantities. Declare to TSA officer.","cat":"Baby","aff":null},{"name":"Knitting Needles","co":"Yes","ck":"Yes","note":"Wrap or protect to prevent injury.","cat":"Miscellaneous","aff":null},{"name":"Kubatons","co":"No","ck":"Yes","note":"","cat":"Weapons","aff":null},{"name":"LED lights","co":"Yes","ck":"Yes","note":"","cat":"Electronics","aff":null},{"name":"Lacrosse Sticks","co":"No","ck":"Yes","note":"","cat":"Sporting","aff":"lacrosse stick travel bag"},{"name":"Laptops","co":"Yes","ck":"Yes","note":"Remove from bag and place in separate bin for X-ray screening.","cat":"Electronics","aff":"laptop sleeve case tsa friendly"},{"name":"Laser Hair Remover","co":"Yes","ck":"Yes","note":"","cat":"Toiletries","aff":null},{"name":"Laser Pointers","co":"Yes","ck":"Yes","note":"","cat":"Electronics","aff":null},{"name":"License plate","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Life Vest","co":"Yes","ck":"Yes","note":"Up to two CO2 cartridges inside, plus two spare cartridges.","cat":"Safety","aff":null},{"name":"Light Bulbs","co":"Yes","ck":"Yes","note":"","cat":"Household","aff":null},{"name":"Light Saber (toy)","co":"Yes","ck":"Yes","note":"Sadly, real lightsabers don't exist. Toy lightsabers allowed.","cat":"Miscellaneous","aff":null},{"name":"Lighter Fluid","co":"No","ck":"No","note":"","cat":"Flammables","aff":null},{"name":"Lighters (Arc/Electronic)","co":"Yes (Special Instructions)","ck":"No","note":"Must prevent unintentional activation. No recharging on board. Max 100Wh battery.","cat":"Flammables","aff":null},{"name":"Lighters (Disposable/Zippo)","co":"Yes","ck":"No","note":"One lighter allowed in carry-on. None in checked.","cat":"Flammables","aff":null},{"name":"Lipstick","co":"Yes","ck":"Yes","note":"","cat":"Toiletries","aff":"travel makeup case organizer"},{"name":"Lithium Batteries (spare)","co":"Yes","ck":"No","note":"Spare lithium batteries must be in carry-on, not checked.","cat":"Electronics","aff":"lithium battery storage case fireproof"},{"name":"Longboards","co":"Yes","ck":"Yes","note":"","cat":"Sporting","aff":null},{"name":"Lotion","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Toiletries","aff":"tsa approved silicone travel bottles"},{"name":"Luggage Protection Covers","co":"Yes","ck":"Yes","note":"Officers may need to open covers for screening.","cat":"Travel","aff":"luggage protective cover"},{"name":"MREs","co":"Yes (Special Instructions)","ck":"Yes","note":"Some airlines don't allow MREs in carry-on due to self-heating element.","cat":"Food & Drink","aff":null},{"name":"Magic 8 Ball","co":"No","ck":"Yes","note":"Outlook not so good for carry-on!","cat":"Miscellaneous","aff":null},{"name":"Magnets","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Makeup Remover","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes (Special Instructions)","note":"Subject to 3-1-1. FAA limits total restricted articles in checked baggage.","cat":"Toiletries","aff":"travel size makeup remover wipes"},{"name":"Makeup Wipes","co":"Yes","ck":"Yes","note":"","cat":"Toiletries","aff":"travel makeup wipes pack"},{"name":"Mallets","co":"No","ck":"Yes","note":"","cat":"Tools","aff":null},{"name":"Maple Syrup","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Martial Arts Weapons","co":"No","ck":"Yes","note":"","cat":"Weapons","aff":null},{"name":"Mascara","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Toiletries","aff":"travel makeup case"},{"name":"Massagers","co":"Yes","ck":"Yes","note":"","cat":"Medical","aff":null},{"name":"Matches (Safety)","co":"Yes","ck":"No","note":"One book of safety matches allowed in carry-on. None in checked.","cat":"Flammables","aff":null},{"name":"Matches (Strike-anywhere)","co":"No","ck":"No","note":"Prohibited in both carry-on and checked.","cat":"Flammables","aff":null},{"name":"Meat Cleavers","co":"No","ck":"Yes","note":"Any sharp objects in checked bags should be sheathed or securely wrapped.","cat":"Sharp Objects","aff":null},{"name":"Medical Devices","co":"Yes","ck":"No","note":"Implanted, ingested, injected, or fitted externally.","cat":"Medical","aff":"medical device travel case"},{"name":"Medical Marijuana","co":"Yes (Special Instructions)","ck":"Yes (Special Instructions)","note":"TSA doesn't search for illegal drugs but will refer to law enforcement if found.","cat":"Medical","aff":null},{"name":"Medical Masks","co":"Yes","ck":"Yes","note":"","cat":"Medical","aff":"travel face masks pack disposable"},{"name":"Medications (Liquid)","co":"Yes (Special Instructions)","ck":"Yes","note":"Medically necessary liquids allowed in reasonable quantities. Declare to officer.","cat":"Medical","aff":"medication travel pouch organized"},{"name":"Medications (Pills)","co":"Yes","ck":"Yes","note":"","cat":"Medical","aff":"travel pill organizer weekly"},{"name":"Mercury Thermometer","co":"No","ck":"Yes (Special Instructions)","note":"One small medical thermometer per passenger in checked bag only. Must be in protective case.","cat":"Medical","aff":null},{"name":"Microwave","co":"Check with Airline","ck":"Yes","note":"","cat":"Household","aff":null},{"name":"Mirrors","co":"Yes","ck":"Yes","note":"","cat":"Household","aff":null},{"name":"Mixer","co":"Yes (Special Instructions)","ck":"Yes","note":"Check with airline for size/weight restrictions.","cat":"Household","aff":null},{"name":"Multi-tool without Blades","co":"Yes","ck":"Yes","note":"","cat":"Tools","aff":"travel multitool tsa friendly"},{"name":"Multi-tools with Blades","co":"Yes (Special Instructions)","ck":"Yes","note":"Multi-tools with knives of any length prohibited in carry-on. Scissors less than 4 inches may be allowed.","cat":"Tools","aff":null},{"name":"Nail Clippers","co":"Yes","ck":"Yes","note":"","cat":"Toiletries","aff":"travel nail clipper set"},{"name":"Nunchucks","co":"No","ck":"Yes","note":"","cat":"Weapons","aff":null},{"name":"Nuts","co":"Yes","ck":"Yes","note":"","cat":"Food & Drink","aff":null},{"name":"Oils and Vinegars","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Paintings","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Parachutes","co":"Yes (Special Instructions)","ck":"Yes (Special Instructions)","note":"You must be present to assist in inspection. Arrive 30 minutes early.","cat":"Sporting","aff":null},{"name":"Peanut Butter","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Pepper Spray","co":"No","ck":"Yes","note":"Self-defense sprays containing more than 2% tear gas prohibited in both.","cat":"Weapons","aff":null},{"name":"Perfume/Cologne","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Toiletries","aff":"travel perfume atomizer refillable"},{"name":"Pickleball Paddle","co":"Yes","ck":"Yes","note":"","cat":"Sporting","aff":"pickleball paddle cover bag"},{"name":"Pies and Cakes","co":"Yes","ck":"Yes","note":"Solid food items allowed.","cat":"Food & Drink","aff":null},{"name":"Pill Cutter","co":"Yes","ck":"Yes","note":"","cat":"Medical","aff":"travel pill cutter splitter"},{"name":"Pillows","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Pizza","co":"Yes","ck":"Yes","note":"Solid food items allowed.","cat":"Food & Drink","aff":null},{"name":"Planting seeds","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Plants","co":"Yes","ck":"Yes","note":"Check with airline for size restrictions.","cat":"Miscellaneous","aff":null},{"name":"Play-doh","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Playstation / Xbox","co":"Yes","ck":"Yes","note":"Place console in separate bin for X-ray screening.","cat":"Electronics","aff":null},{"name":"Pocket Knife","co":"No","ck":"Yes","note":"Pack in checked baggage.","cat":"Sharp Objects","aff":null},{"name":"Pool Cues","co":"No","ck":"Yes","note":"","cat":"Sporting","aff":null},{"name":"Portable Oxygen Concentrators","co":"Yes (Special Instructions)","ck":"Yes (Special Instructions)","note":"Certain POCs permitted onboard. Check FAA acceptance criteria.","cat":"Medical","aff":null},{"name":"Pots and Pans","co":"Yes (Special Instructions)","ck":"Yes","note":"Cast iron skillets prohibited in carry-on.","cat":"Household","aff":null},{"name":"Printer","co":"Yes","ck":"Yes","note":"Remove from bag and place in separate bin for X-ray screening.","cat":"Electronics","aff":null},{"name":"Printer Ink","co":"Yes","ck":"Yes","note":"","cat":"Electronics","aff":null},{"name":"Projectors","co":"Yes","ck":"Yes","note":"Place in separate bin for X-ray screening.","cat":"Electronics","aff":"mini travel projector portable"},{"name":"Propane","co":"No","ck":"No","note":"","cat":"Flammables","aff":null},{"name":"Prosthetics","co":"Yes","ck":"Yes","note":"","cat":"Medical","aff":null},{"name":"Protein or Energy Powders","co":"Yes","ck":"Yes","note":"Powders greater than 12 oz must be placed in separate bin for screening.","cat":"Food & Drink","aff":null},{"name":"Putty Balls","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Radio","co":"Yes","ck":"Yes","note":"Check with airline for size restrictions.","cat":"Electronics","aff":null},{"name":"Razor (Disposable/Electric)","co":"Yes","ck":"Yes","note":"Sharp edges should be securely sheathed.","cat":"Toiletries","aff":"electric travel razor tsa"},{"name":"Razor (Safety)","co":"Yes","ck":"Yes","note":"Without blades only. Blades in checked bag.","cat":"Toiletries","aff":"travel safety razor case"},{"name":"Razor-Type Blades","co":"No","ck":"Yes","note":"Box cutters, razor blades not in cartridge prohibited in carry-on.","cat":"Sharp Objects","aff":null},{"name":"Realistic Replicas of Explosives","co":"No","ck":"No","note":"","cat":"Prohibited","aff":null},{"name":"Realistic Replicas of Firearms","co":"No","ck":"Yes","note":"","cat":"Firearms","aff":null},{"name":"Realistic Replicas of Incendiaries","co":"No","ck":"No","note":"","cat":"Prohibited","aff":null},{"name":"Recreational Oxygen","co":"No","ck":"No","note":"Non-medically required oxygen containers prohibited.","cat":"Hazardous","aff":null},{"name":"Remote Controlled Cars","co":"Yes","ck":"Yes","note":"","cat":"Electronics","aff":null},{"name":"Salad Dressing","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Salsa and Sauces","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Scissors (less than 4 inches)","co":"Yes","ck":"Yes","note":"Blades measuring 4 inches or less from pivot point.","cat":"Tools","aff":"travel scissors tsa approved small"},{"name":"Scissors (more than 4 inches)","co":"No","ck":"Yes","note":"","cat":"Sharp Objects","aff":null},{"name":"Screwdrivers (7 inches or less)","co":"Yes","ck":"Yes","note":"","cat":"Tools","aff":null},{"name":"Screwdrivers (more than 7 inches)","co":"No","ck":"Yes","note":"","cat":"Tools","aff":null},{"name":"Shampoo","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Toiletries","aff":"tsa approved silicone travel bottles shampoo"},{"name":"Shaving Cream","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Toiletries","aff":"travel size shaving cream tsa"},{"name":"Shoes","co":"Yes","ck":"Yes","note":"","cat":"Clothing","aff":null},{"name":"Skis and Ski Poles","co":"No","ck":"Yes","note":"","cat":"Sporting","aff":"ski travel bag padded"},{"name":"Small Toy Cars","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Smart Luggage","co":"Yes (Special Instructions)","ck":"Yes","note":"Must have removable lithium battery. Battery must be carried in cabin.","cat":"Electronics","aff":"tsa approved smart luggage"},{"name":"Snack Bar","co":"Yes","ck":"Yes","note":"","cat":"Food & Drink","aff":null},{"name":"Snacks","co":"Yes","ck":"Yes","note":"Solid food items allowed.","cat":"Food & Drink","aff":null},{"name":"Snow Cleats","co":"No","ck":"Yes","note":"Sports equipment that can be used as a bludgeon.","cat":"Sporting","aff":null},{"name":"Snow Globes","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Less than 3.4 oz (tennis ball size) allowed in carry-on if fits in quart bag.","cat":"Miscellaneous","aff":null},{"name":"Snowboards","co":"Yes","ck":"Yes","note":"Check with airline for size/weight restrictions.","cat":"Sporting","aff":"snowboard travel bag"},{"name":"Snowshoes","co":"Yes","ck":"Yes","note":"","cat":"Sporting","aff":null},{"name":"Soap (Bar)","co":"Yes","ck":"Yes","note":"","cat":"Toiletries","aff":"travel soap case container"},{"name":"Soap (Liquid)","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Toiletries","aff":"tsa approved travel bottles liquid"},{"name":"Soda","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Solar Panels","co":"Check with Airline","ck":"Check with Airline","note":"Check with airline for size restrictions.","cat":"Electronics","aff":null},{"name":"Solid Candles","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Solid Foods","co":"Yes","ck":"Yes","note":"Solid food items allowed. Liquid/gel over 3.4 oz not allowed in carry-on.","cat":"Food & Drink","aff":null},{"name":"Solid Makeup","co":"Yes","ck":"Yes","note":"Powders over 12 oz must be placed in separate bin.","cat":"Toiletries","aff":"travel makeup organizer case"},{"name":"Soups","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Sparklers","co":"No","ck":"No","note":"","cat":"Flammables","aff":null},{"name":"Speakers","co":"Yes","ck":"Yes","note":"Check with airline for size restrictions.","cat":"Electronics","aff":"portable bluetooth speaker travel"},{"name":"Spear Guns","co":"No","ck":"Yes","note":"","cat":"Sporting","aff":null},{"name":"Spices (dry)","co":"Yes","ck":"Yes","note":"","cat":"Food & Drink","aff":null},{"name":"Spillable Batteries","co":"No","ck":"No","note":"Except those in wheelchairs.","cat":"Hazardous","aff":null},{"name":"Sports Cleats","co":"Yes","ck":"Yes","note":"","cat":"Sporting","aff":null},{"name":"Spray Paint","co":"No","ck":"No","note":"","cat":"Flammables","aff":null},{"name":"Spray Starch","co":"No","ck":"No","note":"","cat":"Flammables","aff":null},{"name":"Staplers","co":"Yes","ck":"Yes","note":"","cat":"Tools","aff":null},{"name":"Starter Pistols","co":"No","ck":"Yes (Special Instructions)","note":"Must be unloaded, in locked hard-sided container, declared at check-in.","cat":"Firearms","aff":null},{"name":"Steel Toe Boots","co":"Yes","ck":"Yes","note":"","cat":"Clothing","aff":null},{"name":"Stick Pins","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Stuffed Animals","co":"Yes","ck":"Yes","note":"Check with airline for size restrictions.","cat":"Miscellaneous","aff":null},{"name":"Stun Guns/Shocking Devices","co":"No","ck":"Yes","note":"","cat":"Weapons","aff":null},{"name":"Sunscreen","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Toiletries","aff":"travel size sunscreen tsa"},{"name":"Swords","co":"No","ck":"Yes","note":"Any sharp objects in checked bags should be sheathed or securely wrapped.","cat":"Weapons","aff":null},{"name":"TENS unit","co":"Yes","ck":"Yes","note":"","cat":"Medical","aff":null},{"name":"Tablets (iPad, etc.)","co":"Yes","ck":"Yes","note":"Remove from bag and place in separate bin for X-ray screening.","cat":"Electronics","aff":"tablet travel case sleeve"},{"name":"Tactical Pen","co":"No","ck":"Yes","note":"","cat":"Weapons","aff":null},{"name":"Tamales","co":"Yes","ck":"Yes","note":"","cat":"Food & Drink","aff":null},{"name":"Tampons","co":"Yes","ck":"Yes","note":"","cat":"Personal","aff":null},{"name":"Tape Measures","co":"Yes","ck":"Yes","note":"","cat":"Tools","aff":"pocket tape measure travel"},{"name":"Tattoo Guns","co":"Yes (Special Instructions)","ck":"Yes (Special Instructions)","note":"Devices with lithium batteries should be in carry-on.","cat":"Electronics","aff":null},{"name":"Tattoo Inks","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Toiletries","aff":null},{"name":"Tea (dry)","co":"Yes","ck":"Yes","note":"Solid food items allowed.","cat":"Food & Drink","aff":null},{"name":"Tea Kettle","co":"Yes","ck":"Yes","note":"Check with airline for size restrictions.","cat":"Household","aff":null},{"name":"Tear Gas","co":"No","ck":"No","note":"Self-defense sprays with more than 2% tear gas prohibited in both.","cat":"Weapons","aff":null},{"name":"Television","co":"Yes","ck":"Yes","note":"Check with airline for size restrictions.","cat":"Electronics","aff":null},{"name":"Tennis Rackets","co":"Yes","ck":"Yes","note":"","cat":"Sporting","aff":"tennis racket travel bag"},{"name":"Tent Spikes","co":"No","ck":"Yes","note":"Any sharp objects in checked bags should be sheathed or securely wrapped.","cat":"Sporting","aff":null},{"name":"Throwing Stars","co":"No","ck":"Yes","note":"Any sharp objects in checked bags should be sheathed or securely wrapped.","cat":"Weapons","aff":null},{"name":"Tobacco","co":"Yes","ck":"Yes","note":"","cat":"Tobacco","aff":"tobacco travel pouch"},{"name":"Tobacco Pipes","co":"Yes","ck":"Yes","note":"","cat":"Tobacco","aff":"pipe travel case"},{"name":"Toothbrush","co":"Yes","ck":"Yes","note":"","cat":"Toiletries","aff":"travel toothbrush case"},{"name":"Toothpaste","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Toiletries","aff":"travel toothpaste tsa size"},{"name":"Tortilla Press","co":"Yes","ck":"Yes","note":"","cat":"Household","aff":null},{"name":"Toy Guns and Weapons","co":"Yes (Special Instructions)","ck":"Yes","note":"Squirt guns must be empty. Realistic replicas prohibited.","cat":"Miscellaneous","aff":null},{"name":"Toy Robots","co":"Yes","ck":"Yes","note":"Check with airline for size restrictions.","cat":"Electronics","aff":null},{"name":"Toys (Adult)","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Tripods","co":"Yes","ck":"Yes","note":"","cat":"Electronics","aff":"travel tripod compact lightweight"},{"name":"Trophy","co":"Yes","ck":"Yes","note":"","cat":"Miscellaneous","aff":null},{"name":"Turpentine and Paint Thinner","co":"No","ck":"No","note":"","cat":"Flammables","aff":null},{"name":"Tweezers","co":"Yes","ck":"Yes","note":"Any sharp objects in checked bags should be sheathed or securely wrapped.","cat":"Toiletries","aff":"travel tweezers case"},{"name":"Umbrellas","co":"Yes (Special Instructions)","ck":"Yes","note":"Check with airline for size/weight restrictions.","cat":"Travel","aff":"travel umbrella compact windproof"},{"name":"Unused Syringes","co":"Yes (Special Instructions)","ck":"Yes (Special Instructions)","note":"Check with airline prior to flight.","cat":"Medical","aff":null},{"name":"Virtual Reality Unit","co":"Yes","ck":"Yes","note":"Check with airline for size restrictions.","cat":"Electronics","aff":"vr headset travel case"},{"name":"Vitamins","co":"Yes","ck":"Yes","note":"","cat":"Medical","aff":"travel vitamin organizer pill case"},{"name":"Waffle Iron","co":"Yes","ck":"Yes","note":"Check with airline for size restrictions.","cat":"Household","aff":null},{"name":"Walkers","co":"Yes","ck":"Yes","note":"","cat":"Medical","aff":null},{"name":"Walking Sticks","co":"Yes","ck":"Yes","note":"Blunt-tipped allowed. Sharp-tipped not allowed in carry-on.","cat":"Medical","aff":"collapsible walking stick travel"},{"name":"Wallet Chains","co":"Yes","ck":"Yes","note":"","cat":"Personal","aff":null},{"name":"Water Bottles (empty)","co":"Yes","ck":"Yes","note":"Must be empty before security. Fill after checkpoint.","cat":"Food & Drink","aff":null},{"name":"Water for Babies","co":"Yes (Special Instructions)","ck":"Yes","note":"Allowed in reasonable quantities. Declare to TSA officer.","cat":"Baby","aff":null},{"name":"Wet Wipes","co":"Yes","ck":"Yes","note":"","cat":"Toiletries","aff":"travel wet wipes pack"},{"name":"Whey Protein","co":"Yes","ck":"Yes","note":"Powders over 12 oz must be placed in separate bin.","cat":"Food & Drink","aff":null},{"name":"Wrenches (7 inches or less)","co":"Yes","ck":"Yes","note":"","cat":"Tools","aff":null},{"name":"Wrenches (more than 7 inches)","co":"No","ck":"Yes","note":"","cat":"Tools","aff":null},{"name":"Yogurt","co":"Yes (Less than or equal to 3.4oz/100 ml allowed)","ck":"Yes","note":"Subject to 3-1-1 liquids rule.","cat":"Food & Drink","aff":null},{"name":"Zippo Lighter","co":"Yes","ck":"No","note":"One lighter allowed in carry-on. None in checked.","cat":"Flammables","aff":null},{"name":"iPad / Tablets","co":"Yes","ck":"Yes","note":"Remove from bag and place in separate bin for X-ray screening.","cat":"Electronics","aff":"ipad travel case sleeve"}],"categories":["Food & Drink","Electronics","Toiletries","Miscellaneous","Medical","Sporting","Flammables","Household","Tools","Weapons","Tobacco","Sharp Objects","Firearms","Baby","Personal","Hazardous","Musical","Safety","Travel","Prohibited","Clothing","Automotive"],"cat_emoji":{"Food & Drink":"🍎","Electronics":"🔌","Toiletries":"🧴","Miscellaneous":"📦","Medical":"💊","Sporting":"⚽","Flammables":"🔥","Household":"🏠","Tools":"🔧","Weapons":"🔫","Tobacco":"🚬","Sharp Objects":"✂️","Firearms":"🎯","Baby":"👶","Personal":"👤","Hazardous":"☣️","Musical":"🎸","Safety":"🦺","Travel":"🧳","Prohibited":"🚫","Clothing":"👕","Automotive":"🚗"},"cat_count":{"Flammables":17,"Household":14,"Electronics":30,"Food & Drink":41,"Firearms":4,"Sporting":22,"Miscellaneous":23,"Tools":13,"Baby":4,"Medical":23,"Personal":4,"Sharp Objects":5,"Musical":2,"Weapons":10,"Hazardous":4,"Safety":2,"Automotive":1,"Toiletries":25,"Tobacco":8,"Travel":2,"Prohibited":2,"Clothing":2},"generic_search":"travel accessories essentials"};
+        const AMAZON_TAG = 'whatsmyshoesi-20';
+
+        // Popular search chips (most-searched items)
+        const POPULAR_ITEMS = [
+            'Scissors (less than 4 inches)',
+            'Lithium Batteries (spare)',
+            'E-cigarettes / Vaping devices',
+            'Medications (Liquid)',
+            'Shampoo',
+            'Hand Sanitizer'
+        ];
+
+        // ===== HELPERS =====
+        function statusClass(status) {
+            const s = status.toLowerCase();
+            if (s.startsWith('no')) return 'status-no';
+            if (s.includes('3.4oz') || s.includes('100 ml')) return 'status-liquid';
+            if (s.includes('special instructions')) return 'status-special';
+            if (s.includes('airline')) return 'status-airline';
+            return 'status-yes';
+        }
+        function statusIcon(status) {
+            const s = status.toLowerCase();
+            if (s.startsWith('no')) return '❌';
+            if (s.includes('3.4oz') || s.includes('100 ml')) return '💧';
+            if (s.includes('special instructions')) return '⚠️';
+            if (s.includes('airline')) return '❓';
+            return '✅';
+        }
+        function statusShort(status) {
+            const s = status.toLowerCase();
+            if (s.startsWith('no')) return 'No';
+            if (s.includes('special instructions')) return 'Yes — special instructions';
+            if (s.includes('3.4oz') || s.includes('100 ml')) return '≤ 3.4 oz / 100 ml';
+            if (s.includes('airline')) return 'Check with airline';
+            return 'Yes';
+        }
+        function escapeHtml(s) {
+            return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        }
+        function amazonUrl(search) {
+            return 'https://www.amazon.com/s?k=' + encodeURIComponent(search) + '&tag=' + AMAZON_TAG;
+        }
+        function tsaSourceUrl(category) {
+            // Map onze 22 categorieën naar TSA's 9 echte categorie-pagina's
+            // (rest valt terug naar /all)
+            const mapping = {
+                'Food & Drink': 'food',
+                'Electronics': 'all',
+                'Toiletries': 'all',
+                'Miscellaneous': 'miscellaneous',
+                'Medical': 'medical',
+                'Sporting': 'sporting-and-camping',
+                'Flammables': 'flammables',
+                'Household': 'household-and-tools',
+                'Tools': 'household-and-tools',
+                'Weapons': 'all',
+                'Tobacco': 'all',
+                'Sharp Objects': 'sharp-objects',
+                'Firearms': 'firearms',
+                'Baby': 'all',
+                'Personal': 'all',
+                'Hazardous': 'flammables',
+                'Musical': 'all',
+                'Safety': 'all',
+                'Travel': 'all',
+                'Prohibited': 'all',
+                'Clothing': 'all',
+                'Automotive': 'all'
+            };
+            const slug = mapping[category] || 'all';
+            return 'https://www.tsa.gov/travel/security-screening/whatcanibring/' + slug;
+        }
+
+        // ===== STATE =====
+        let currentSearch = '';
+        let currentCategory = null;
+
+        // ===== DOM =====
+        const searchInput = document.getElementById('search');
+        const totalCountEl = document.getElementById('total-count');
+        const popularRow = document.getElementById('popular-row');
+        const categoryCard = document.getElementById('category-card');
+        const categoryGrid = document.getElementById('category-grid');
+        const resultsArea = document.getElementById('results-area');
+
+        // ===== Init: render popular chips + categories =====
+        function init() {
+            // Popular chips
+            popularRow.innerHTML = '<strong style="color:var(--text-secondary);font-weight:600;">Popular:</strong> ' +
+                POPULAR_ITEMS.map(name => {
+                    const label = name.replace(/\s*\([^)]*\)/, '').toLowerCase();
+                    return '<a class="popular-chip" data-q="' + escapeHtml(label) + '">' + escapeHtml(label) + '</a>';
+                }).join(' ');
+
+            popularRow.querySelectorAll('.popular-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    const q = chip.dataset.q;
+                    searchInput.value = q;
+                    currentSearch = q;
+                    currentCategory = null;
+                    updateCategoryHighlight();
+                    renderResults();
+                });
+            });
+
+            // Categories
+            DATA.categories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'cat-btn';
+                btn.dataset.cat = cat;
+                const emoji = DATA.cat_emoji[cat] || '📦';
+                const count = DATA.cat_count[cat] || 0;
+                btn.innerHTML = '<div class="cat-emoji">' + emoji + '</div>'
+                              + '<div class="cat-name">' + escapeHtml(cat) + '</div>'
+                              + '<div class="cat-count">' + count + ' items</div>';
+                btn.addEventListener('click', () => {
+                    if (currentCategory === cat) {
+                        currentCategory = null;
+                    } else {
+                        currentCategory = cat;
+                    }
+                    searchInput.value = '';
+                    currentSearch = '';
+                    updateCategoryHighlight();
+                    renderResults();
+                });
+                categoryGrid.appendChild(btn);
+            });
+        }
+
+        function updateCategoryHighlight() {
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.cat === currentCategory);
+            });
+        }
+
+        // ===== Search =====
+        searchInput.addEventListener('input', () => {
+            currentSearch = searchInput.value.trim().toLowerCase();
+            if (currentSearch) currentCategory = null;
+            updateCategoryHighlight();
+            renderResults();
+        });
+
+        // ===== Filter logic =====
+        function getFilteredItems() {
+            let items = DATA.items;
+            if (currentCategory) {
+                items = items.filter(it => it.cat === currentCategory);
+            }
+            if (currentSearch) {
+                const q = currentSearch;
+                items = items.filter(it => {
+                    return it.name.toLowerCase().includes(q)
+                        || (it.note || '').toLowerCase().includes(q)
+                        || it.cat.toLowerCase().includes(q);
+                });
+            }
+            return items;
+        }
+
+        // ===== Render =====
+        function renderResults() {
+            const filtered = getFilteredItems();
+
+            // Hide category card when searching/filtering with results
+            if (currentSearch || currentCategory) {
+                categoryCard.style.display = 'none';
+            } else {
+                categoryCard.style.display = '';
+                resultsArea.innerHTML = '';
+                return;
+            }
+
+            if (filtered.length === 0) {
+                resultsArea.innerHTML = '<div class="empty-state">'
+                    + '<div class="empty-icon">🔍</div>'
+                    + '<div class="empty-title">No items found</div>'
+                    + '<div class="empty-text">Try a different search term. For items not in our list, check <a href="https://www.tsa.gov/travel/security-screening/whatcanibring/all" target="_blank" rel="noopener" style="color:var(--emerald-600);">TSA.gov</a> directly or contact @AskTSA on Twitter.</div>'
+                    + '</div>';
+                return;
+            }
+
+            let html = '<div class="results-header">';
+            html += '<div class="results-count">';
+            if (currentCategory) {
+                html += (DATA.cat_emoji[currentCategory] || '📦') + ' ' + escapeHtml(currentCategory) + ' · ' + filtered.length + ' items';
+            } else {
+                html += filtered.length + ' result' + (filtered.length === 1 ? '' : 's') + ' for "' + escapeHtml(currentSearch) + '"';
+            }
+            html += '</div>';
+            html += '<button class="clear-btn" id="clear-btn">← Back</button>';
+            html += '</div>';
+
+            filtered.forEach(item => {
+                const coClass = statusClass(item.co);
+                const ckClass = statusClass(item.ck);
+                const coIcon = statusIcon(item.co);
+                const ckIcon = statusIcon(item.ck);
+                const coShort = statusShort(item.co);
+                const ckShort = statusShort(item.ck);
+
+                html += '<div class="item-card">';
+                html += '<div class="item-header">';
+                html += '<div class="item-name">' + escapeHtml(item.name) + '</div>';
+                html += '<div class="item-cat">' + (DATA.cat_emoji[item.cat] || '') + ' ' + escapeHtml(item.cat) + '</div>';
+                html += '</div>';
+
+                html += '<div class="status-row">';
+                html += '<div class="status-box ' + coClass + '">';
+                html += '<div class="status-label">' + coIcon + ' Carry-on</div>';
+                html += '<div class="status-value">' + escapeHtml(coShort) + '</div>';
+                html += '</div>';
+                html += '<div class="status-box ' + ckClass + '">';
+                html += '<div class="status-label">' + ckIcon + ' Checked bag</div>';
+                html += '<div class="status-value">' + escapeHtml(ckShort) + '</div>';
+                html += '</div>';
+                html += '</div>';
+
+                if (item.note) {
+                    html += '<div class="item-note">ℹ️ ' + escapeHtml(item.note) + '</div>';
+                }
+
+                // Affiliate row
+                const affSearch = item.aff || DATA.generic_search;
+                const affLabel = item.aff ? 'Recommended gear' : 'Travel gear on Amazon';
+                html += '<div class="item-aff">';
+                html += '<div class="aff-text">🛒 ' + escapeHtml(affLabel) + '</div>';
+                html += '<a href="' + amazonUrl(affSearch) + '" class="aff-link" target="_blank" rel="noopener sponsored">Shop →</a>';
+                html += '</div>';
+
+                // TSA source link
+                html += '<div class="item-source">Source: <a href="' + tsaSourceUrl(item.cat) + '" target="_blank" rel="noopener">tsa.gov</a></div>';
+
+                html += '</div>';
+            });
+
+            resultsArea.innerHTML = html;
+
+            document.getElementById('clear-btn').addEventListener('click', () => {
+                searchInput.value = '';
+                currentSearch = '';
+                currentCategory = null;
+                updateCategoryHighlight();
+                renderResults();
+                searchInput.focus();
+            });
+        }
+
+        init();
+    </script>
+</body>
+</html>
